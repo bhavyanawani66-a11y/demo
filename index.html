@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peakforge — Gear for the elements</title>
+<meta name="description" content="Technical apparel and equipment built for weather, trail, and load." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__bar">
+    <a class="logo" href="index.html">PEAK<span>FORGE</span></a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav" data-nav>
+      <a href="index.html" class="is-current">Shop</a>
+      <a href="index.html#apparel">Apparel</a>
+      <a href="index.html#equipment">Equipment</a>
+      <a href="index.html#footwear">Footwear</a>
+    </nav>
+    <div class="header-search">
+      <input type="text" id="search-input" placeholder="Search gear — try 'jacket' or 'dumbbells'" aria-label="Search products" />
+      <div class="search-dropdown" id="search-dropdown"></div>
+    </div>
+    <div class="header-actions">
+      <button class="cart-button" data-open-cart aria-label="Open cart">
+        &#128188;
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Built for weather, not around it</p>
+    <h1>Gear that reads the forecast<br>and shows up anyway.</h1>
+    <p class="lede">Technical apparel and strength equipment engineered against a spec sheet, not a mood board. Every listing shows the number that matters — waterproof rating, load, grip — before you ever see a lifestyle photo.</p>
+    <a class="btn btn--primary" href="#shop">Shop the catalog</a>
+  </div>
+  <div class="spec-readout">
+    <p class="spec-readout__label">Featured — live spec readout</p>
+    <p class="spec-readout__name">AeroShield Running Jacket</p>
+    <div class="spec-readout__grid">
+      <div><b>10,000mm</b><span>Waterproof rating</span></div>
+      <div><b>340g</b><span>Packed weight</span></div>
+      <div><b>₹4,499</b><span>Starting price</span></div>
+      <div><b>42 units</b><span>In stock, all sizes</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="shop-layout" id="shop">
+  <aside class="shop-filters" id="shop-filters"></aside>
+  <section>
+    <div class="shop-head">
+      <h2>Full catalog</h2>
+      <span id="shop-result-count"></span>
+    </div>
+    <div class="product-grid" id="shop-grid" aria-busy="false"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <strong>PEAKFORGE</strong>
+      <p>Technical gear, shipped from Bareilly, UP.</p>
+    </div>
+    <div>
+      <p>Ask Nexus (bottom left) about stock, fit, or an order.</p>
+      <p>Or reach us directly on WhatsApp (bottom right).</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/common.js"></script>
+<script type="module" src="js/shop.js"></script>
+<script type="module">
+  import { mountSearch } from "./js/search.js";
+  mountSearch(document.getElementById("search-input"), document.getElementById("search-dropdown"));
+</script>
+</body>
+</html>
